@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Swastika Consultancy</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>Swastika Consultancy</h1>
+            <div class="nav-right">
+                <span id="userEmail"></span>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showSection('profile')" class="nav-link active"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="#" onclick="showSection('subscriptions')" class="nav-link"><i class="fas fa-box"></i> Subscriptions</a></li>
+                    <li><a href="#" onclick="showSection('orders')" class="nav-link"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+                    <li><a href="#" onclick="showSection('payments')" class="nav-link"><i class="fas fa-credit-card"></i> Payments</a></li>
+                    <li><a href="#" onclick="showSection('support')" class="nav-link"><i class="fas fa-headset"></i> Support</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <!-- Profile Section -->
+            <section id="profile" class="section active">
+                <h2>My Profile</h2>
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <img src="https://via.placeholder.com/100" alt="Profile">
+                        <div>
+                            <p><strong>Name:</strong> <span id="profileName">-</span></p>
+                            <p><strong>Email:</strong> <span id="profileEmail">-</span></p>
+                            <p><strong>Phone:</strong> <span id="profilePhone">-</span></p>
+                            <p><strong>Member Since:</strong> <span id="profileDate">-</span></p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="editProfile()">Edit Profile</button>
+                </div>
+            </section>
+
+            <!-- Subscriptions Section -->
+            <section id="subscriptions" class="section">
+                <h2>Active Subscriptions</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Package</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Expires</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Professional Package</td>
+                            <td>₹12,000</td>
+                            <td><span class="badge active">Active</span></td>
+                            <td>2024-07-26</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders" class="section">
+                <h2>Order History</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Service</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ORD12345</td>
+                            <td>Professional Package</td>
+                            <td>₹12,000</td>
+                            <td>2024-06-26</td>
+                            <td><span class="badge completed">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Payments Section -->
+            <section id="payments" class="section">
+                <h2>Payment History</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TXN123456</td>
+                            <td>₹12,000</td>
+                            <td>Credit Card</td>
+                            <td>2024-06-26</td>
+                            <td><span class="badge completed">Success</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Support Section -->
+            <section id="support" class="section">
+                <h2>Support & Help</h2>
+                <div class="support-card">
+                    <h3>Need Help?</h3>
+                    <p>Contact our support team for any queries or issues.</p>
+                    <p><strong>Email:</strong> support@swastikaconsultancy.com</p>
+                    <p><strong>Phone:</strong> +91-XXXX-XXXX-XX</p>
+                    <button class="btn btn-primary">Contact Support</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            event.target.closest('.nav-link').classList.add('active');
+        }
+
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'index.html';
+        }
+
+        function editProfile() {
+            alert('Edit profile feature coming soon!');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const userEmail = localStorage.getItem('userEmail');
+            document.getElementById('userEmail').textContent = userEmail || 'User';
+            document.getElementById('profileEmail').textContent = userEmail || '-';
+        });
+    </script>
+</body>
+</html>

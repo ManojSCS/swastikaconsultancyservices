@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swastika Consultancy Services - Professional Accounting & Compliance</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>Swastika Consultancy</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Professional Consultancy Services</h1>
+            <p>Accounting, Bookkeeping, Registration & Compliance Solutions</p>
+            <button class="btn btn-primary" onclick="scrollTo('services')">Explore Services</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Accounting Services</h3>
+                    <p>Complete accounting solutions including financial statements, tax preparation, and audit services.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Bookkeeping</h3>
+                    <p>Professional bookkeeping to maintain accurate financial records and daily transactions.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Registration & Filing</h3>
+                    <p>Business registration, GST filing, and compliance documentation services.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Compliance</h3>
+                    <p>Ensure your business stays compliant with all legal and regulatory requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <h2>Service Packages</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3>Starter Package</h3>
+                    <p class="price">₹5,000<span>/month</span></p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Basic Bookkeeping</li>
+                        <li><i class="fas fa-check"></i> Monthly Reports</li>
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                        <li><i class="fas fa-times"></i> Tax Filing</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="addToCart('Starter', 5000)">Add to Cart</button>
+                </div>
+
+                <div class="package-card featured">
+                    <span class="badge">Popular</span>
+                    <h3>Professional Package</h3>
+                    <p class="price">₹12,000<span>/month</span></p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Complete Bookkeeping</li>
+                        <li><i class="fas fa-check"></i> Financial Statements</li>
+                        <li><i class="fas fa-check"></i> Tax Filing</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="addToCart('Professional', 12000)">Add to Cart</button>
+                </div>
+
+                <div class="package-card">
+                    <h3>Enterprise Package</h3>
+                    <p class="price">₹25,000<span>/month</span></p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Full Accounting Suite</li>
+                        <li><i class="fas fa-check"></i> Audit Services</li>
+                        <li><i class="fas fa-check"></i> Compliance Management</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="addToCart('Enterprise', 25000)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Swastika Consultancy</h2>
+            <p>We are a leading consultancy firm providing professional accounting, bookkeeping, and compliance services to businesses of all sizes. With over 10 years of experience, we help businesses streamline their financial operations and ensure complete regulatory compliance.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91-XXXX-XXXX-XX</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@swastikaconsultancy.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Address: Your Address Here</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Swastika Consultancy Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Icon -->
+    <div class="cart-icon" onclick="openCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
